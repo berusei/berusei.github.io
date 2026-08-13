@@ -1,0 +1,4 @@
+node_modules/
+
+# 生成物（tokens.ts から自動生成）
+src/styles/tokens.css

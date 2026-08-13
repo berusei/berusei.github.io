@@ -1,0 +1,29 @@
+{
+    "name": "berusei.github.io",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "Web エンジニアのポートフォリオ — React コンポーネントから index.html / styles.css を静的生成する",
+    "scripts": {
+        "dev": "vite",
+        "build": "node scripts/build.ts",
+        "typecheck": "tsc --noEmit",
+        "check": "npm run typecheck && npm run build"
+    },
+    "engines": {
+        "node": ">=22.18"
+    },
+    "dependencies": {
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8"
+    },
+    "devDependencies": {
+        "@types/node": "^26.2.0",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.4",
+        "@vitejs/plugin-react": "^6.0.5",
+        "prettier": "^3.9.6",
+        "typescript": "^5.9.3",
+        "vite": "^8.2.1"
+    }
+}
