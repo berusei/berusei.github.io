@@ -16,7 +16,11 @@ export const profilePhoto: ProfilePhoto = {
     alt: 'Berusei のプロフィール写真',
 };
 
-export const profileBody: readonly ReactNode[] = ['フルスタックになりたいWEBENGINEER'];
+export const profileBody: readonly ReactNode[] = [
+    <>
+    2022年12月からPHPを中心としたバックエンドエンジニアをやってます。
+    </>
+];
 
 export const profileFacts: readonly ProfileFact[] = [
     { label: '名前', value: 'Berusei / Kento Ikeda' },
