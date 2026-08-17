@@ -29,7 +29,7 @@ export const works: readonly Work[] = [
         ),
         tags: ['Go', 'SQLite', 'Manticore Search'],
         site: 'https://kakolog.info/',
-        repo: 'https://github.com/berusei/kakologinfo',
+        repo: 'https://github.com/berusei/kakolog.info',
         shot: { src: 'works/img_kakologinfo.png', alt: 'KakologInfoのスクリーンショット' },
     },
     {
