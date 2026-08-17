@@ -42,7 +42,8 @@ function rootImages(): Plugin {
         name: 'jra-root-images',
         configureServer(server) {
             server.middlewares.use((req, res, next) => {
-                const name = /^\/([\w-]+\.[a-z]+)(?:\?|$)/.exec(req.url ?? '')?.[1];
+                // works/ のようなサブディレクトリも許す。`.` を含む区切りは弾く。
+                const name = /^\/([\w-]+(?:\/[\w-]+)*\.[a-z]+)(?:\?|$)/.exec(req.url ?? '')?.[1];
                 const type = name && imageTypes[extname(name).toLowerCase()];
                 if (!name || !type) return next();
 

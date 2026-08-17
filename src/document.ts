@@ -1,4 +1,5 @@
 import { absoluteUrl, profile, siteImage, siteMeta } from './content/site.ts';
+import { worksRevealScript } from './works-reveal.ts';
 
 interface DocumentOptions {
     readonly body: string;
@@ -54,6 +55,9 @@ export function renderDocument({ body }: DocumentOptions): string {
 
 <body>
 ${body}
+<script>
+${worksRevealScript}
+</script>
 </body>
 
 </html>

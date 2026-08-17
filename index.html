@@ -60,107 +60,261 @@
                         </div>
                         <p class="section__desc"></p>
                     </div>
-                    <ul class="works-list">
-                        <li class="works-list__item">
-                            <a class="work-row" href="https://kakolog.info/" target="_blank" rel="noreferrer"
-                                ><span class="work-row__main"
-                                    ><span class="work-row__title">KakologInfo</span
-                                    ><span class="work-row__meta"
-                                        ><span class="work-row__meta-item">2026</span
-                                        ><span class="work-row__meta-item">Web App</span></span
-                                    ><span class="work-row__desc"
-                                        >PythonスクリプトによるWebスクレイピングで小一ヶ月かけて取得した約1.3億件の5ちゃんねる（旧：2ちゃんねる）のスレタイを検索できるサイト。DBの規模では自身が関わってきた中で最大だったので、バックエンド設計や技術選定などに時間を要しリリースまでが一苦労でした。</span
-                                    ><span class="tag-list"
-                                        ><span class="tag">Go</span><span class="tag">SQLite</span
-                                        ><span class="tag">Manticore Search</span></span
-                                    ></span
-                                ><span class="work-row__arrow" aria-hidden="true">→</span></a
-                            >
-                        </li>
-                        <li class="works-list__item">
+                    <ul class="works">
+                        <li class="work">
+                            <div class="work__head">
+                                <p class="work__meta">
+                                    <span class="work__meta-item">2026</span
+                                    ><span class="work__meta-item">Web App</span>
+                                </p>
+                                <h3 class="work__title">KakologInfo</h3>
+                            </div>
                             <a
-                                class="work-row"
+                                class="work__shot"
+                                href="https://kakolog.info/"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="KakologInfo を開く"
+                                ><img
+                                    src="works/img_kakologinfo.png"
+                                    alt="KakologInfoのスクリーンショット"
+                                    loading="lazy"
+                                    decoding="async"
+                            /></a>
+                            <p class="work__desc">
+                                PythonスクリプトによるWebスクレイピングで小一ヶ月かけて取得した約1.3億件の5ちゃんねる（旧：2ちゃんねる）のスレタイを検索できるサイト。<br />DBの規模では自身が関わってきた中で最大だったので、バックエンド設計や技術選定などに時間を要しリリースまでが一苦労でした。
+                            </p>
+                            <ul class="tag-list">
+                                <li class="tag">Go</li>
+                                <li class="tag">SQLite</li>
+                                <li class="tag">Manticore Search</li>
+                            </ul>
+                            <div class="work__actions">
+                                <a
+                                    class="btn btn--repo btn--icon"
+                                    href="https://github.com/berusei/kakologinfo"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    ><svg
+                                        class="btn__mark"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                                        ></path></svg
+                                    ><span class="visually-hidden"
+                                        >KakologInfo のリポジトリ（別のタブで開きます）</span
+                                    ></a
+                                ><a
+                                    class="btn btn--primary"
+                                    href="https://kakolog.info/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >サイトを開く<svg
+                                        class="btn__icon"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path d="M7 3H3v10h10V9"></path>
+                                        <path d="M10 2.5h3.5V6"></path>
+                                        <path d="M13.5 2.5 7.5 8.5"></path></svg
+                                ></a>
+                            </div>
+                        </li>
+                        <li class="work">
+                            <div class="work__head">
+                                <p class="work__meta">
+                                    <span class="work__meta-item">2026</span
+                                    ><span class="work__meta-item">Web App</span>
+                                </p>
+                                <h3 class="work__title">MateViewer</h3>
+                            </div>
+                            <a
+                                class="work__shot"
                                 href="https://berusei.github.io/mateviewer/"
                                 target="_blank"
                                 rel="noreferrer"
-                                ><span class="work-row__main"
-                                    ><span class="work-row__title">MateViewer</span
-                                    ><span class="work-row__meta"
-                                        ><span class="work-row__meta-item">2026</span
-                                        ><span class="work-row__meta-item">Web App</span></span
-                                    ><span class="work-row__desc"
-                                        >某Android用専ブラからエクスポートしたZIPファイルの過去ログデータをブラウザ上で閲覧できるWebアプリ。元々はAndroidからiPhoneへの乗り換えをしたのはいいものの、やはりchMateぐらい使い勝手の良いアプリが恋しいと思って衝動的に製作した。キャッシュ管理にIndexeddbを使用し、非常に優秀だという事がわかった。</span
-                                    ><span class="tag-list"
-                                        ><span class="tag">TypeScript</span><span class="tag">React</span
-                                        ><span class="tag">Next.js</span><span class="tag">Vite</span
-                                        ><span class="tag">Tailwind CSS</span></span
-                                    ></span
-                                ><span class="work-row__arrow" aria-hidden="true">→</span></a
-                            >
+                                aria-label="MateViewer を開く"
+                                ><img
+                                    src="works/img_mateviewer.png"
+                                    alt="MateViewerのページスクリーンショット"
+                                    loading="lazy"
+                                    decoding="async"
+                            /></a>
+                            <p class="work__desc">
+                                某Android用専ブラからエクスポートしたZIPファイルの過去ログデータをブラウザ上で閲覧できるWebアプリ。<br />元々はAndroidからiPhoneへの乗り換えをきっかけに、やはりchMateぐらい使い勝手の良いアプリが恋しいと思って衝動的に製作した。<br />リードした各スレッドデータの永続化に使用したIndexeddbが非常に優秀だという事がわかった。
+                            </p>
+                            <ul class="tag-list">
+                                <li class="tag">TypeScript</li>
+                                <li class="tag">React</li>
+                                <li class="tag">Next.js</li>
+                                <li class="tag">Vite</li>
+                                <li class="tag">Tailwind CSS</li>
+                            </ul>
+                            <div class="work__actions">
+                                <a
+                                    class="btn btn--repo btn--icon"
+                                    href="https://github.com/berusei/mateviewer"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    ><svg
+                                        class="btn__mark"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                                        ></path></svg
+                                    ><span class="visually-hidden"
+                                        >MateViewer のリポジトリ（別のタブで開きます）</span
+                                    ></a
+                                ><a
+                                    class="btn btn--primary"
+                                    href="https://berusei.github.io/mateviewer/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >サイトを開く<svg
+                                        class="btn__icon"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path d="M7 3H3v10h10V9"></path>
+                                        <path d="M10 2.5h3.5V6"></path>
+                                        <path d="M13.5 2.5 7.5 8.5"></path></svg
+                                ></a>
+                            </div>
                         </li>
-                        <li class="works-list__item">
-                            <a
-                                class="work-row"
-                                href="https://berusei.github.io/anison-sales/"
-                                target="_blank"
-                                rel="noreferrer"
-                                ><span class="work-row__main"
-                                    ><span class="work-row__title"
-                                        >アニソンCD売り上げデータ保管庫(復刻版)</span
-                                    ><span class="work-row__meta"
-                                        ><span class="work-row__meta-item">2026</span
-                                        ><span class="work-row__meta-item">Web App</span></span
-                                    ><span class="work-row__desc"
-                                        >かつて有志の方が公開していたアニソン専業歌手や声優アーティストのCD・ライブ円盤などの売上枚数が見れるブログサイトを、Wayback
-                                        Machineからの情報を基にDBサイト風にブラッシュアップしたもの。さらなる利便性を求めて改良案を練ってます。</span
-                                    ><span class="tag-list"
-                                        ><span class="tag">TypeScript</span><span class="tag">React</span
-                                        ><span class="tag">Next.js</span></span
-                                    ></span
-                                ><span class="work-row__arrow" aria-hidden="true">→</span></a
-                            >
+                        <li class="work">
+                            <div class="work__head">
+                                <p class="work__meta">
+                                    <span class="work__meta-item">2026</span
+                                    ><span class="work__meta-item">Web Site</span>
+                                </p>
+                                <h3 class="work__title">アニソンCD売り上げデータ保管庫(復刻版)</h3>
+                            </div>
+                            <p class="work__desc">
+                                かつて有志の方が公開していたアニソン専業歌手や声優アーティストのCD・DVD/BDなどの売上枚数が見れるブログを、Wayback
+                                Machineからの情報を基にDBサイト風にブラッシュアップしたもの。<br />さらなる利便性を求めて改良案を練ってます。
+                            </p>
+                            <ul class="tag-list">
+                                <li class="tag">TypeScript</li>
+                                <li class="tag">React</li>
+                                <li class="tag">Next.js</li>
+                            </ul>
+                            <div class="work__actions">
+                                <a
+                                    class="btn btn--repo btn--icon"
+                                    href="https://github.com/berusei/anison-sales"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    ><svg
+                                        class="btn__mark"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                                        ></path></svg
+                                    ><span class="visually-hidden"
+                                        >アニソンCD売り上げデータ保管庫(復刻版)
+                                        のリポジトリ（別のタブで開きます）</span
+                                    ></a
+                                ><a
+                                    class="btn btn--primary"
+                                    href="https://berusei.github.io/anison-sales/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >サイトを開く<svg
+                                        class="btn__icon"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path d="M7 3H3v10h10V9"></path>
+                                        <path d="M10 2.5h3.5V6"></path>
+                                        <path d="M13.5 2.5 7.5 8.5"></path></svg
+                                ></a>
+                            </div>
                         </li>
-                        <li class="works-list__item">
-                            <a
-                                class="work-row"
-                                href="https://bangdreamchbbs.at-ninja.jp/"
-                                target="_blank"
-                                rel="noreferrer"
-                                ><span class="work-row__main"
-                                    ><span class="work-row__title">バンドリch.BBS 過去ログ倉庫</span
-                                    ><span class="work-row__meta"
-                                        ><span class="work-row__meta-item">2024</span
-                                        ><span class="work-row__meta-item">Web Site</span></span
-                                    ><span class="work-row__desc"
-                                        >閉鎖済の掲示板サイトにあったスレッドをWayback
-                                        Machine上にあるものだけスクレイピングし、PythonスクリプトのBeautiful
-                                        Soupなどでソースコードを整形させた上、当時のデザインを参考に可能な限り復元させた。当時はバイブコーディングがまだ無かったのでChatGPTのフリープランで壁打ちしながら自力で試行錯誤しながらやりました。このサイトはコロナ禍の時よく見てたのでほぼ自分専用みたいなものとして作ったが、訳あってジャンル離れした為ほぼ見る事はなかった。</span
-                                    ><span class="tag-list"
-                                        ><span class="tag">Python</span><span class="tag">HTML5</span
-                                        ><span class="tag">CSS3</span></span
-                                    ></span
-                                ><span class="work-row__arrow" aria-hidden="true">→</span></a
-                            >
+                        <li class="work">
+                            <div class="work__head">
+                                <p class="work__meta">
+                                    <span class="work__meta-item">2024</span
+                                    ><span class="work__meta-item">Web Site</span>
+                                </p>
+                                <h3 class="work__title">バンドリch.BBS 過去ログ倉庫</h3>
+                            </div>
+                            <p class="work__desc">
+                                Wayback
+                                Machine上で記録されている閉鎖済の掲示板サイトのスレッド（トピック）をスクレイピングし、PythonスクリプトのBeautiful
+                                Soupなどでソースコードを整形させた上、当時のデザインを参考に可能な限り復元させた。<br />当時はバイブコーディングがまだ無かったのでChatGPTのフリープランで壁打ちしながら自力で試行錯誤しながらやりました。<br />このサイトはコロナ禍の時よく見てたのでほぼ自分用みたいなものとして作ったが、訳あってジャンル離れした為現在はほぼ見る事はない。
+                            </p>
+                            <ul class="tag-list">
+                                <li class="tag">Python</li>
+                                <li class="tag">HTML5</li>
+                                <li class="tag">CSS3</li>
+                            </ul>
+                            <div class="work__actions">
+                                <a
+                                    class="btn btn--primary"
+                                    href="https://bangdreamchbbs.at-ninja.jp/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >サイトを開く<svg
+                                        class="btn__icon"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path d="M7 3H3v10h10V9"></path>
+                                        <path d="M10 2.5h3.5V6"></path>
+                                        <path d="M13.5 2.5 7.5 8.5"></path></svg
+                                ></a>
+                            </div>
                         </li>
-                        <li class="works-list__item">
-                            <a
-                                class="work-row"
-                                href="https://github.com/berusei/densan-club"
-                                target="_blank"
-                                rel="noreferrer"
-                                ><span class="work-row__main"
-                                    ><span class="work-row__title">THE INTERVIEW+ / 百人一首の達人</span
-                                    ><span class="work-row__meta"
-                                        ><span class="work-row__meta-item">2013 - 2014</span
-                                        ><span class="work-row__meta-item">Windows Software</span></span
-                                    ><span class="work-row__desc"
-                                        >いずれも高校時代に部活動の電算部で製作したもの。担当箇所のみ公開中。</span
-                                    ><span class="tag-list"
-                                        ><span class="tag">Visual Basic .NET</span
-                                        ><span class="tag">HTML5</span><span class="tag">CSS3</span></span
-                                    ></span
-                                ><span class="work-row__arrow" aria-hidden="true">→</span></a
-                            >
+                        <li class="work">
+                            <div class="work__head">
+                                <p class="work__meta">
+                                    <span class="work__meta-item">2013 - 2014</span
+                                    ><span class="work__meta-item">Windows Software</span>
+                                </p>
+                                <h3 class="work__title">THE INTERVIEW+ / 百人一首の達人</h3>
+                            </div>
+                            <p class="work__desc">
+                                いずれも高校時代に部活動の電算部で製作したもの。担当箇所のみ公開中。
+                            </p>
+                            <ul class="tag-list">
+                                <li class="tag">Visual Basic .NET</li>
+                                <li class="tag">HTML5</li>
+                                <li class="tag">CSS3</li>
+                            </ul>
+                            <div class="work__actions">
+                                <a
+                                    class="btn btn--repo btn--icon"
+                                    href="https://github.com/berusei/densan-club"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    ><svg
+                                        class="btn__mark"
+                                        viewBox="0 0 16 16"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                                        ></path></svg
+                                    ><span class="visually-hidden"
+                                        >THE INTERVIEW+ / 百人一首の達人
+                                        のリポジトリ（別のタブで開きます）</span
+                                    ></a
+                                >
+                            </div>
                         </li>
                     </ul>
                 </section>
@@ -550,5 +704,33 @@
                 </div>
             </footer>
         </div>
+        <script>
+            (function () {
+                var list = document.querySelector(".works");
+                if (list === null || !("IntersectionObserver" in window)) return;
+
+                list.classList.add("js-reveal");
+
+                // 隠した状態を一度描画させてから監視する。同じフレームで is-visible を
+                // 付けると変化前の値が描画されず、transition が発火しない。
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        var observer = new IntersectionObserver(
+                            function (entries) {
+                                for (var i = 0; i < entries.length; i += 1) {
+                                    if (!entries[i].isIntersecting) continue;
+                                    entries[i].target.classList.add("is-visible");
+                                    observer.unobserve(entries[i].target);
+                                }
+                            },
+                            { threshold: 0.15 },
+                        );
+
+                        var works = list.querySelectorAll(".work");
+                        for (var j = 0; j < works.length; j += 1) observer.observe(works[j]);
+                    });
+                });
+            })();
+        </script>
     </body>
 </html>

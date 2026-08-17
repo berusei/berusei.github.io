@@ -1,13 +1,13 @@
 import { Section } from '../Section.tsx';
-import { WorkRow } from '../WorkRow.tsx';
-import { works } from '../../content/works.ts';
+import { WorkItem } from '../WorkItem.tsx';
+import { works } from '../../content/works.tsx';
 
 export function WorksSection() {
     return (
         <Section id="works" eyebrow="WORKS" title="制作物" description="">
-            <ul className="works-list">
+            <ul className="works">
                 {works.map((work) => (
-                    <WorkRow key={work.href} {...work} />
+                    <WorkItem key={work.title} {...work} />
                 ))}
             </ul>
         </Section>

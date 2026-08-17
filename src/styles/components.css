@@ -235,99 +235,230 @@ strong {
     fill: currentColor;
 }
 
-.works-list {
+.works {
     list-style: none;
     margin: 0;
     padding: 0;
-
     border-top: 1px solid var(--rule);
 }
 
-.works-list__item {
+.work {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+    gap: 24px;
+    padding: 48px 0;
     border-bottom: 1px solid var(--rule);
 }
 
-.work-row {
-    display: grid;
-
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 24px;
-    align-items: start;
-
-    padding: 32px 0;
-    color: var(--ink-900);
-    transition: background-color .15s ease;
+.works.js-reveal .work {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .4s ease, transform .4s cubic-bezier(.2, 0, 0, 1);
 }
 
-a.work-row:hover {
-
-    background: var(--fill);
-    text-decoration: none;
+.works.js-reveal .work.is-visible {
+    opacity: 1;
+    transform: none;
 }
 
-.work-row__main {
+.work__head {
     display: grid;
-    gap: 10px;
+    grid-template-columns: minmax(0, 1fr);
     justify-items: start;
+    gap: 12px;
+    width: 100%;
 }
 
-.work-row__title {
-    font: 700 clamp(1.375rem, 1.1rem + .9vw, 1.75rem)/1.35 var(--font-mixed);
-    letter-spacing: -0.01em;
-    font-feature-settings: 'palt' 1;
-    text-wrap: balance;
-}
-
-a.work-row:hover .work-row__title {
-    text-decoration: underline;
-    text-underline-offset: .18em;
-    text-decoration-thickness: 1px;
-}
-
-.work-row__meta {
+.work__meta {
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 4px 10px;
     font: 400 12px/1.5 var(--font-en);
-    letter-spacing: .08em;
+    letter-spacing: .14em;
     color: var(--ink-400);
     font-variant-numeric: tabular-nums;
 }
 
-.work-row__meta-item + .work-row__meta-item {
+.work__meta-item + .work__meta-item {
     border-left: 1px solid var(--rule);
     padding-left: 10px;
 }
 
-.work-row__desc {
-    font: 400 14px/1.9 var(--font-jp);
+.work__title {
+    margin: 0;
+    font-family: var(--font-mixed);
+    font-size: clamp(2rem, 1.4rem + 1vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    font-feature-settings: 'palt' 1;
+    text-wrap: balance;
+}
+
+.work__shot {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--fill);
+    transition: border-color .2s ease;
+}
+
+.work__shot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s cubic-bezier(.2, 0, 0, 1);
+}
+
+a.work__shot:hover {
+    border-color: var(--ink-900);
+    text-decoration: none;
+}
+
+a.work__shot:hover img {
+    transform: scale(1.04);
+}
+
+.work__desc {
+    margin: 0;
+    font-family: var(--font-jp);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.95;
     letter-spacing: .04em;
     color: var(--ink-600);
+    text-wrap: pretty;
 }
 
-.work-row__arrow {
-    justify-self: end;
-    font: 700 26px/1.35 var(--font-en);
-    color: var(--turf-700);
-
-    padding-right: 4px;
-    transition: transform .15s ease;
+.work .tag-list {
+    margin-top: 0;
 }
 
-a.work-row:hover .work-row__arrow {
-    transform: translateX(4px);
+.work__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.btn {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 24px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    font: 700 13px/1.2 var(--font-jp);
+    letter-spacing: .04em;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+/* アイコンだけのボタン。タップターゲットを 44px 角で確保する。 */
+.btn--icon {
+    width: 44px;
+    padding: 0;
+}
+
+.btn__icon {
+    width: 14px;
+    height: 14px;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    transition: transform .2s ease;
+}
+
+
+
+.btn__mark {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    fill: currentColor;
+}
+
+.btn--primary {
+    background: var(--turf-700);
+    border-color: var(--turf-700);
+    color: var(--paper);
+}
+
+.btn--primary:hover {
+    background: var(--turf-900);
+    border-color: var(--turf-900);
+    color: var(--paper);
+}
+
+.btn--repo {
+    background: var(--paper);
+    border-color: var(--ink-900);
+    color: var(--ink-900);
+}
+
+.btn--repo:hover {
+    background: var(--ink-900);
+    color: var(--paper);
+}
+
+@media (max-width: 899px) {
+    .work__shot {
+        aspect-ratio: 16 / 9;
+    }
 }
 
 @media (max-width: 640px) {
-    .work-row {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
-        padding: 28px 0;
+    .work {
+        gap: 20px;
+        padding: 36px 0;
     }
 
-    .work-row__arrow {
-        justify-self: start;
+    .work__desc {
+        font-size: 14px;
+    }
+
+    .work__actions {
+        justify-content: stretch;
+    }
+
+    /* アイコンボタンは 44px 固定にして、主導線だけ幅いっぱいに伸ばす。 */
+    .work__actions .btn {
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+
+    .work__actions .btn--icon {
+        flex: 0 0 44px;
+    }
+}
+
+/* 全体指定は duration しか潰さないので transform 側をここで無効化する。 */
+@media (prefers-reduced-motion: reduce) {
+    .works.js-reveal .work {
+        opacity: 1;
+        transform: none;
+    }
+
+    a.work__shot:hover img,
+    .btn:hover .btn__icon {
+        transform: none;
     }
 }
 

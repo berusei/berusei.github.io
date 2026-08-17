@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App.tsx';
+import { worksRevealScript } from './works-reveal.ts';
 import './styles/tokens.css';
 import './styles/components.css';
 
@@ -12,3 +13,9 @@ createRoot(container).render(
         <App />
     </StrictMode>,
 );
+
+requestAnimationFrame(() => {
+    const script = document.createElement('script');
+    script.textContent = worksRevealScript;
+    document.body.append(script);
+});
