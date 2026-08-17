@@ -98,7 +98,6 @@ strong {
 .page {
     font-family: var(--font-jp);
     color: var(--ink-900);
-    background: var(--paper);
     font-variant-numeric: tabular-nums;
 }
 

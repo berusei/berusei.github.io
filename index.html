@@ -40,7 +40,8 @@
 
     <body>
         <link rel="preload" as="image" href="/photo.jpg" />
-        <div class="page">
+        <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none"></div>
+        <div class="page" style="position: relative; z-index: 1">
             <header class="site-header">
                 <div class="site-header__inner">
                     <nav class="site-nav" aria-label="セクション">
@@ -383,9 +384,7 @@
                                 </dd>
                             </dl>
                         </div>
-                        <p class="profile__paragraph">
-                            2022年12月からPHPを中心としたバックエンドエンジニアをやってます。
-                        </p>
+                        <p class="profile__paragraph">Software Engineer | Developer | Coder</p>
                     </div>
                 </section>
                 <section class="section" id="resume">

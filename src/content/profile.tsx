@@ -18,7 +18,7 @@ export const profilePhoto: ProfilePhoto = {
 
 export const profileBody: readonly ReactNode[] = [
     <>
-    2022年12月からPHPを中心としたバックエンドエンジニアをやってます。
+        Software Engineer | Developer | Coder
     </>
 ];
 
