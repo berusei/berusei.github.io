@@ -1,4 +1,4 @@
-import type { Work, WorkShot } from '../content/works.ts';
+import type { Work, WorkShot } from '../content/works.tsx';
 
 export function WorkItem({ kind, year, title, description, tags, site, repo, shot }: Work) {
     const meta = [year, kind].filter((value) => value !== '');

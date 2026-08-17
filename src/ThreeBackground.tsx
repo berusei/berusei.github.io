@@ -41,6 +41,24 @@ export interface ThreeBackgroundOptions {
   threeUrl?: string;
 }
 
+/**
+ * 背景の設定はここだけ。npm run dev（React コンポーネント）と
+ * npm run build（埋め込みスクリプト）が同じ値を読む。
+ */
+export const backgroundOptions: ThreeBackgroundOptions = {
+  motif: 'particles',
+  speed: 1,
+  density: 1,
+  ink: '#0a0a0a',
+  line: '#f1f1f1',
+  dot: '#eeeeee',
+  accent: '#007853',
+  background: '#ffffff',
+};
+
+/** 背景レイヤーの id。コンポーネントが描画し、埋め込みスクリプトが探す。 */
+export const backgroundMountId = 'bg-layer';
+
 export interface ThreeBackgroundApi {
   /** モチーフを差し替える（再生成なし） */
   setMotif(name: MotifName): void;
@@ -406,35 +424,18 @@ export interface ThreeBackgroundProps extends ThreeBackgroundOptions {
   className?: string;
 }
 
-export default function ThreeBackground({
-  motif = 'particles',
-  speed = 1,
-  density = 1,
-  ink = '#0a0a0a',
-  line = '#d4d4d4',
-  dot = '#e2e2e2',
-  accent = '#007853',
-  background = '#ffffff',
-  parallax = true,
-  scroll = true,
-  click = true,
-  accentDots = false,
-  threeUrl,
-  style,
-  className,
-}: ThreeBackgroundProps) {
+export default function ThreeBackground({ style, className, ...props }: ThreeBackgroundProps) {
   const host = useRef<HTMLDivElement | null>(null);
   const bg = useRef<ThreeBackgroundApi | null>(null);
   const first = useRef(true);
 
+  const options = { ...backgroundOptions, ...props };
+  const motif = options.motif;
+
   // 生成は一度だけ（色・速度などを変えたい場合は key を変えて再マウント）
   useEffect(() => {
     if (!host.current) return;
-    bg.current = createThreeBackground(host.current, {
-      motif, speed, density, ink, line, dot, accent, background,
-      parallax, scroll, click, accentDots,
-      ...(threeUrl ? { threeUrl } : {}),
-    });
+    bg.current = createThreeBackground(host.current, options);
     return () => {
       bg.current?.destroy();
       bg.current = null;
@@ -445,15 +446,52 @@ export default function ThreeBackground({
   // motif の切り替えだけは作り直さずに反映
   useEffect(() => {
     if (first.current) { first.current = false; return; }
-    bg.current?.setMotif(motif);
+    if (motif) bg.current?.setMotif(motif);
   }, [motif]);
 
+  // 静的ビルドではこの div だけが出力され、埋め込みスクリプトが id で探して使う。
+  // レイヤーの見た目は style 属性で完結させ、CSS 側に持たせない。
   return (
     <div
       ref={host}
+      id={backgroundMountId}
       aria-hidden="true"
       className={className}
       style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', ...style }}
     />
   );
+}
+
+/* ---------------------------------------------------------------------------
+   SSG 用: 上の createThreeBackground をそのまま文字列化して埋め込む
+   （エンジンのコードを二重に持たないための toString）
+   --------------------------------------------------------------------------- */
+
+/**
+ * <script type="module"> の中身を返す。
+ * 設定・マウント先とも React 側と同じものを使うので、dev と build で差が出ない。
+ * @param options backgroundOptions への上書き
+ * @param mountId 背景レイヤーの id
+ */
+export function threeBackgroundScript(
+  options: ThreeBackgroundOptions = {},
+  mountId = backgroundMountId
+): string {
+  const config = JSON.stringify({ ...backgroundOptions, ...options });
+
+  // SSG は vite の SSR 変換を通ったコードを toString するので、書き換えられた
+  // import() を元に戻す。取りこぼすとブラウザで ReferenceError になるだけで
+  // 気付きにくいため、残骸が残っていたらビルドを止める。
+  const source = String(createThreeBackground).replace(/__vite_ssr_dynamic_import__/g, 'import');
+  if (source.includes('__vite_ssr')) {
+    throw new Error('ThreeBackground: vite の SSR 変換の残骸を除去できませんでした');
+  }
+
+  return [
+    '(function () {',
+    '  var createThreeBackground = ' + source + ';',
+    '  var host = document.getElementById(' + JSON.stringify(mountId) + ');',
+    '  if (host) createThreeBackground(host, ' + config + ');',
+    '})();',
+  ].join('\n');
 }

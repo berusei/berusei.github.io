@@ -4,19 +4,13 @@ import { ContactSection } from './components/sections/ContactSection.tsx';
 import { ProfileSection } from './components/sections/ProfileSection.tsx';
 import { ResumeSection } from './components/sections/ResumeSection.tsx';
 import { WorksSection } from './components/sections/WorksSection.tsx';
-import ThreeBackground from './ThreeBackground';
+import ThreeBackground from './ThreeBackground.tsx';
 
 export function App() {
     return (
         <>
-            <ThreeBackground
-                motif="particles"
-                speed={1}
-                density={1}
-                line="#f1f1f1"
-                dot="#eeeeee"
-                background="#ffffff"
-            />
+            {/* 設定は ThreeBackground.tsx の backgroundOptions に集約している */}
+            <ThreeBackground />
             <div className="page" style={{ position: 'relative', zIndex: 1 }}>
                 <SiteHeader />
                 <main className="site-main">

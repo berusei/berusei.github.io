@@ -1,5 +1,6 @@
 import { absoluteUrl, profile, siteImage, siteMeta } from './content/site.ts';
 import { worksRevealScript } from './works-reveal.ts';
+import { threeBackgroundScript } from './ThreeBackground.tsx';
 
 interface DocumentOptions {
     readonly body: string;
@@ -55,11 +56,13 @@ export function renderDocument({ body }: DocumentOptions): string {
 
 <body>
 ${body}
+<script type="module">
+${threeBackgroundScript()}
+</script>
 <script>
 ${worksRevealScript}
 </script>
 </body>
-
 </html>
 `;
 }
