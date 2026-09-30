@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>berusei.dev</title>
+<meta name="description" content="Berusei（池田 健人）のプロフィール・経歴・制作物">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-secondary: #f7f7f5;
+    --text: #1a1a1a;
+    --text-secondary: #666;
+    --text-tertiary: #999;
+    --border: #e5e5e3;
+    --link: #1a6daa;
+    --link-hover: #0f4c75;
+    --accent: #e8f4f8;
+    --code-bg: #f4f4f2;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif;
+    --font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+    --max-width: 960px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --bg-secondary: #242424;
+      --text: #e5e5e3;
+      --text-secondary: #aaa;
+      --text-tertiary: #777;
+      --border: #333;
+      --link: #6db3d8;
+      --link-hover: #8cc8e8;
+      --accent: #1e2d33;
+      --code-bg: #2a2a28;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* ---------- Header / nav ---------- */
+  header {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 24px 20px 0;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  nav a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  nav a:hover { color: var(--link); }
+  nav .logo { font-weight: 600; font-size: 15px; color: var(--text); }
+  nav .sep { color: var(--border); user-select: none; }
+
+  .file-indicator {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 20px 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  /* ---------- Rendered markdown ---------- */
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+  main h1 { font-size: 28px; font-weight: 700; margin: 24px 0 16px; line-height: 1.3; }
+  main h2 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  main h3 { font-size: 16px; font-weight: 600; margin: 24px 0 8px; }
+  main p { margin: 0 0 12px; }
+  main a { color: var(--link); text-decoration: none; }
+  main a:hover { color: var(--link-hover); text-decoration: underline; }
+  main ul, main ol { margin: 0 0 12px; padding-left: 24px; }
+  main li { margin: 4px 0; }
+  main strong { font-weight: 600; }
+  main blockquote {
+    border-left: 3px solid var(--link);
+    background: var(--accent);
+    padding: 12px 16px;
+    margin: 16px 0;
+    border-radius: 0 6px 6px 0;
+    color: var(--text-secondary);
+  }
+  main blockquote strong { color: var(--text); }
+  main blockquote > :last-child { margin-bottom: 0; }
+  main code {
+    background: var(--code-bg);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  main pre {
+    background: var(--code-bg);
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  main pre code { background: none; padding: 0; }
+  main hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  main img { max-width: 100%; border-radius: 6px; }
+
+  /* 表は罫線と縞模様で読みやすく。幅が足りないときは表だけ横スクロール */
+  main table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 12px 0 16px;
+    font-size: 14px;
+  }
+  main th, main td {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  main th { background: var(--bg-secondary); font-weight: 600; white-space: nowrap; }
+  main td:first-child { white-space: nowrap; }
+  main tbody tr:nth-child(2n) td { background: var(--bg-secondary); }
+
+  .md-error { color: #c0392b; }
+
+  /* ---------- Raw view ---------- */
+  .raw-view {
+    display: none;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+  .raw-view pre {
+    background: var(--code-bg);
+    padding: 20px;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .raw-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    color: var(--text-secondary);
+    z-index: 100;
+    transition: all 0.15s;
+  }
+  .raw-toggle:hover { color: var(--text); border-color: var(--text-secondary); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-align: center;
+  }
+  footer a { color: var(--text-tertiary); text-decoration: none; }
+  footer a:hover { color: var(--link); }
+
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    header, .file-indicator, main, .raw-view { padding-left: 16px; padding-right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="./" class="logo">berusei.dev</a>
+    <span class="sep">|</span>
+    <a href="https://github.com/berusei" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://qiita.com/beru_ike" target="_blank" rel="noopener noreferrer">Qiita</a>
+    <a href="https://berusei.github.io/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+  </nav>
+</header>
+
+<div class="file-indicator">&#128196; /README.md</div>
+
+<main id="rendered"><p>読み込み中…</p></main>
+
+<div class="raw-view" id="rawView"><pre id="rawText"></pre></div>
+
+<button class="raw-toggle" id="toggleBtn" type="button">.md を表示</button>
+
+<footer>
+  <p>&copy; Berusei.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@15/marked.min.js"></script>
+<script>
+(function () {
+  var SOURCE = 'README.md';
+  var rendered = document.getElementById('rendered');
+  var rawView = document.getElementById('rawView');
+  var toggleBtn = document.getElementById('toggleBtn');
+  var showingRaw = false;
+
+  toggleBtn.addEventListener('click', function () {
+    showingRaw = !showingRaw;
+    rendered.style.display = showingRaw ? 'none' : 'block';
+    rawView.style.display = showingRaw ? 'block' : 'none';
+    toggleBtn.textContent = showingRaw ? 'レンダリング表示' : '.md を表示';
+  });
+
+  // YAML front matter があれば title / description に使い、本文からは外す
+  function splitFrontMatter(text) {
+    var m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+    if (!m) return { meta: {}, body: text };
+    var meta = {};
+    m[1].split(/\r?\n/).forEach(function (line) {
+      var kv = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
+      if (kv) meta[kv[1]] = kv[2];
+    });
+    return { meta: meta, body: text.slice(m[0].length) };
+  }
+
+  fetch(SOURCE, { cache: 'no-cache' })
+    .then(function (res) {
+      if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+      return res.text();
+    })
+    .then(function (text) {
+      document.getElementById('rawText').textContent = text;
+      var fm = splitFrontMatter(text);
+      rendered.innerHTML = marked.parse(fm.body, { gfm: true });
+
+      rendered.querySelectorAll('a[href^="http"]').forEach(function (a) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      });
+
+      var h1 = rendered.querySelector('h1');
+      document.title = fm.meta.title || (h1 ? h1.textContent : document.title);
+      if (fm.meta.description) {
+        document.querySelector('meta[name="description"]').content = fm.meta.description;
+      }
+    })
+    .catch(function (err) {
+      rendered.innerHTML = '';
+      var p = document.createElement('p');
+      p.className = 'md-error';
+      p.textContent = SOURCE + ' を読み込めませんでした（' + err.message + '）。ローカルで開く場合は file:// ではなく簡易サーバー経由で開いてください。';
+      rendered.appendChild(p);
+    });
+})();
+</script>
+
+</body>
+</html>
