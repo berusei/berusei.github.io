@@ -123,26 +123,25 @@
   main hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
   main img { max-width: 100%; border-radius: 6px; }
 
-  /* 表は罫線と縞模様で読みやすく。幅が足りないときは表だけ横スクロール */
   main table {
-    display: block;
-    width: max-content;
-    max-width: 100%;
-    overflow-x: auto;
+    width: 100%;
     border-collapse: collapse;
-    margin: 12px 0 16px;
+    margin: 12px 0;
     font-size: 14px;
   }
-  main th, main td {
-    padding: 8px 12px;
-    border: 1px solid var(--border);
+  main th {
     text-align: left;
-    vertical-align: top;
-    line-height: 1.6;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
   }
-  main th { background: var(--bg-secondary); font-weight: 600; white-space: nowrap; }
+  main td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
   main td:first-child { white-space: nowrap; }
-  main tbody tr:nth-child(2n) td { background: var(--bg-secondary); }
+  main tr:last-child td { border-bottom: none; }
 
   .md-error { color: #c0392b; }
 
