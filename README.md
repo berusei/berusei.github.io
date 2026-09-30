@@ -74,7 +74,7 @@
 - [MateViewer](https://berusei.github.io/mateviewer/) — 某BBSビューアのバックアップファイルにある過去ログを、ブラウザ上でアプリと同じUIの質感で閲覧・検索できるSPA（[Repository](https://github.com/berusei/mateviewer) / [Qiita](https://qiita.com/beru_ike/items/bef0a9af3eacc510b434)）
 - [アニソンCD売り上げデータ保管庫（非公式復刻版）](https://berusei.github.io/anison-sales/) — 事実上閉鎖となった同名サイトをWayback Machineから復元した静的サイト（[Repository](https://github.com/berusei/anison-sales)）
 - [バンドリch.BBS 過去ログ倉庫](https://bangdreamchbbs.at-ninja.jp/) — 閉鎖済みフォーラムのスレッドを、Wayback Machineのキャッシュから当時のデザイン準拠で復元した静的サイト
-- [THE INTERVIEW+ / 百人一首の達人](https://github.com/berusei/densan-club) — 高校の電算部で全商プログラミングコンテストへ出展した2作品（担当部分のソースのみ公開）
+- [THE INTERVIEW+ / 百人一首の達人](https://github.com/berusei/densan-club) — 高校の電算部で全商プログラミングコンテストへ出展した2作品【**※担当部分のソースコードのみ公開中**】
 
 ほか
 
