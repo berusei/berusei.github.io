@@ -1,5 +1,3 @@
-# berusei.dev
-
 ## 概要
 
 ### プロフィール
@@ -10,8 +8,8 @@
 | 生年月日 | 平成8年9月14日                                                                                      |
 | 出身     | 千葉県                                                                                              |
 | 職業     | バックエンドエンジニア（2022年12月〜）                                                              |
-| 趣味     | ゲーム、VR、音楽鑑賞、読書、創作                                                                    |
-| 関心     | 生成AI、創作                                                                                        |
+| 趣味     | ゲーム、VR、音楽鑑賞、読書、創作活動                                                                |
+| 関心     | Web開発、生成AI                                                                                     |
 | 血液型   | O型                                                                                                 |
 | GitHub   | [berusei](https://github.com/berusei)（個人） / [KentoIkeda](https://github.com/KentoIkeda)（業務） |
 | Qiita    | [beru_ike](https://qiita.com/beru_ike)                                                              |
@@ -82,6 +80,4 @@
 
 ## お問い合わせ
 
-| 項目    | 内容                                        |
-| ------- | ------------------------------------------- |
-| Discord | [beruamo](https://discord.com/channels/@me) |
+- Discord : [beruamo](https://discord.gg/Q8CJUyfE)
